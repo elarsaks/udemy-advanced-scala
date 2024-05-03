@@ -72,5 +72,32 @@ object DarkSugars extends App {
 
 
   // syntax sugar #5
-  // class Composite[A, B]
+  class Composite[A, B]
+  val composite: Int Composite String= ???
+
+  class --> [A, B]
+  val towards: Int --> String = ???
+
+  // syntax sugar #6: update() is very special, much like apply()
+  val anArray = Array(1,2,3)
+  anArray(2) = 7 // rewritten to anArray.update(2, 7)
+  // used in mutable collections
+  // remember apply() AND update()
+
+  // syntax sugar #7: setters for mutable containers
+  class Mutable {
+    private var internalMember: Int = 0 // private OO encapsulation
+    def member: Int = internalMember // "getter"
+    def member_=(value: Int): Unit =
+      internalMember = value // "setter"
+  }
+
+  val aMutableContainer = new Mutable
+  aMutableContainer.member = 42 // rewritten as aMutableContainer.member_=(42)
+
+
+
+
+
+
 }
